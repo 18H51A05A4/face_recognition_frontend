@@ -1,0 +1,139 @@
+p {
+    text-align: center;
+    padding: 5px;
+}
+
+.parent {
+    /* width: 100vw; */
+    height: 100vh;
+}
+
+.first {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile {
+    padding: 10px;
+    height: 50vh;
+    background: white;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.attendance {
+    padding: 10px;
+    width: 65%;
+    height: 50vh;
+    background: white;
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+table {
+    text-align: center;
+}
+
+th,
+td,
+tr {
+    padding: 10px;
+}
+
+.weekly {
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.weekly>div {
+    padding: 30px;
+}
+
+.today {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.weekly>p,
+.today>p {
+    margin: 10px;
+    font-weight: 600;
+}
+
+.second {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tbl-links {
+    width: calc(90% + 30px);
+    padding: 20px;
+}
+
+.list {
+    width: 100%;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.list>th,
+td {
+    padding: 10px;
+    border: none;
+}
+
+.list tr:nth-child(odd) {
+    background-color: white;
+}
+
+.list tr:nth-child(even) {
+    background-color: #ededed;
+}
+
+.list tr:not(:first-child):hover {
+    transform: scale(1.005);
+    font-weight: 600;
+}
+
+.list>tbody>tr>td:nth-child(4)>button {
+    background: rgb(7, 182, 7);
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    border-radius: 7px;
+    border: none;
+}
+
+.list>tbody>tr>td:nth-child(5)>button {
+    background: rgb(63, 159, 243);
+    padding: 10px 25px 10px 25px;
+    color: white;
+    font-weight: 600;
+    border-radius: 7px;
+    border: none;
+}
+
+.list>tbody>tr>td:nth-child(3)>button:hover,
+.list>tbody>tr>td:nth-child(4)>button:hover {
+    cursor: pointer;
+}

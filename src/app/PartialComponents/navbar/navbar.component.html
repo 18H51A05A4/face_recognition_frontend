@@ -1,0 +1,50 @@
+<header>
+    <nav class="navbar">
+        <a href="/" class ="logo"><i class="fa-solid fa-calendar-days"></i> Attendance Tracker</a>
+        <ul class="navbar-options">
+            <ng-container *ngIf="isUserLoggedIn">
+                <li><a routerLink="login">Login</a></li>
+                <li><a routerLink="signup">Signup</a></li>
+            </ng-container>
+            <!-- <ng-container *ngIf="!isUserLoggedIn"> -->
+                <li>
+                    <div class="profile">
+                        <div class="icon-wrap" (click)="showOptionsList()">
+                          <img src="../../assets/Images/user.jpg" height="35px" width="35px" alt="profile pic" class="profile-pic">
+                          <span class="name">John Alex</span>
+                          <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </li>
+            <!-- </ng-container> -->
+        </ul>
+    </nav>
+</header>
+<div class="profile-dd" *ngIf="showOptions">
+    <ul class="profile-ul">
+        <li class="profile-li">
+            <a class="profile" href="/dashboard">
+                <span class="picon">
+                    <i class="fas fa-user-alt"></i>
+                </span>
+                Profile
+            </a>
+        </li>
+        <li class="profile-li">
+            <a class="profile" href="/faculty-dashboard">
+                <span class="picon">
+                    <i class="fas fa-user-alt"></i>
+                </span>
+                Faculty Profile
+            </a>
+        </li>
+        <li>
+            <a class="logout" href="#">
+                <span class="picon">
+                    <i class="fas fa-sign-out-alt"></i>
+                </span>
+                Logout
+            </a>
+        </li>
+    </ul>
+</div>

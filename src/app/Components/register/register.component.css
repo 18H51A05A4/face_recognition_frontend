@@ -1,0 +1,128 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 50px);
+}
+
+.form-section {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    min-width: 600px;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 600px;
+    background-color: #f7f5f2;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item {
+    padding: 8px 30px;
+}
+
+.form-item .error-message p {
+    float: right;
+}
+
+.form-item-gender {
+    padding: 8px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.form-item-gender-options {
+    display: flex;
+    column-gap: 30px;
+}
+
+.radio-btn {
+    white-space: nowrap;
+}
+
+.form-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.asterisk {
+    color: rgba(255, 0, 0, 0.8);
+    font-size: 14px;
+}
+
+.form-input {
+    outline: none;
+    border: none;
+    font-size: 16px;
+    border-radius: 50px;
+    width: 400px;
+    border: 1px solid rgb(221, 221, 221);
+    padding: 16px 20px;
+    height: 30px;
+}
+
+.form-input::placeholder {
+    font-size: 12px;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.error-message {
+    color: red;
+    height: 15px;
+    font-size: 13px;
+    padding-right: 5px;
+}
+
+.photo-btns {
+    display: flex;
+    column-gap: 10px;
+}
+
+.take-photo-btn {
+    border: none;
+    height: 30px;
+    width: 100px;
+    background-color: lightgray;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.signup-btn {
+    margin: 20px 30px 0 30px;
+    cursor: pointer;
+    height: 35px;
+    border-radius: 50px;
+    border: none;
+    background-color: #f56d91;
+    color: white;
+    font-size: 16px;
+}
+
+.form-input.ng-invalid.ng-touched {
+    outline: none;
+    border: 1px solid rgb(247, 115, 115);
+    box-shadow: 0 0 5px 0px rgba(255, 0, 0, 0.5);
+}
+
+.form-invalid {
+    outline: none;
+    border: 1px solid rgb(247, 115, 115);
+}

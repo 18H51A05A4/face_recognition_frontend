@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="faculty.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <title>Dashboard</title>
+</head>
+<body>
+    
+    <div class="parent">
+
+        <div class="first">
+
+            <p>Today's Classes</p>
+
+            <div class="tbl-links">
+                <table class="list">
+                    <tbody>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Class</th>
+                            <th>Starts At</th>
+                            <th>Meeting Link</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>CSE - A</td>
+                            <td>09:10 AM</td>
+                            <td>
+                                <button>LINK</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>CSE - B</td>
+                            <td>10:10 AM</td>
+                            <td>
+                                <button>LINK</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>CSE - C</td>
+                            <td>11:10 AM</td>
+                            <td>
+                                <button>LINK</button>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="second">
+
+            <p>Attendance</p>
+
+            <div class="set-date">
+                <label for="select-date">Set Date : &nbsp; </label>
+                <input type="date" name="select date" id="select-date">
+            </div>
+
+            <div class="tbl-links">
+                <table class="list">
+                    <tbody>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Class</th>
+                            <th>Class Timing</th>
+                            <th>Class Attendance</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>CSE - A</td>
+                            <td>09:10 AM</td>
+                            <td>
+                                <button class="get-attnd">Get Attendance</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>CSE - B</td>
+                            <td>10:10 AM</td>
+                            <td>
+                                <button class="get-attnd">Get Attendance</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>CSE - C</td>
+                            <td>11:10 AM</td>
+                            <td>
+                                <button class="get-attnd">Get Attendance</button>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div modal-overlay="Get Attendance">
+            <div class="modal">
+                <div modal-header>
+                    <div modal-title="title">Student wise Attendance</div>
+                    <button icon="close">&times;</button>
+                </div>
+                <div modal-body>
+
+                    <div class="tbl-links">
+                        <table class="list">
+                            <tbody>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Roll No.</th>
+                                    <th>Duration Present (in minutes)</th>
+                                    <th>Remarks</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>18H51A05A8</td>
+                                    <td>38 min</td>
+                                    <td> Present </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>18H51A05H9</td>
+                                    <td>38 min</td>
+                                    <td> Present </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>18H51A05G7</td>
+                                    <td>20 min</td>
+                                    <td> Absent </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>18H51A0576</td>
+                                    <td>0 min</td>
+                                    <td> Absent </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div modal-footer>
+                    <div class="footer-content">
+                        <button cancel-modal="cancel">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+   
+
+
+
+    <script src="faculty.js"></script>
+    <script src="modal.js"></script>
+
+</body>
+</html>

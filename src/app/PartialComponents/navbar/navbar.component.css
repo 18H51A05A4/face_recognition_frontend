@@ -1,0 +1,104 @@
+.navbar {
+    background-color: #3F5678;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options li {
+    list-style: none;
+    padding: 0 25px;
+    white-space: nowrap;
+}
+
+.navbar li a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar .logo {
+    color: white;
+    float: left;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.fa-solid fa-house-chimney {
+    color: white;
+}
+
+.navbar .profile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.navbar .profile .icon-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.navbar .profile .profile-pic {
+    border-radius: 50%;
+}
+
+.navbar .profile .icon-wrap:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.profile-dd {
+    position: absolute;
+    right: 5px;
+    top: 55px;
+    width: 150px;
+    min-height: 50px;
+    border-radius: 5px;
+    background-color: red;
+    background-color: #3F5678;
+    z-index: 1;
+}
+
+.profile-dd li {
+    padding: 15px 0;
+    list-style: none;
+}
+
+.profile-dd li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.profile-dd li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.profile-dd li a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.profile-dd .profile-ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}

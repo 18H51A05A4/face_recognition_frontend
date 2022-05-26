@@ -1,0 +1,126 @@
+.container {
+    display: flex;
+    height: calc(100vh - 50px);
+    flex-grow: 1;
+}
+
+.left-container {
+    background-image: linear-gradient(#8696ae, #3F5678);
+    justify-content: center;
+    align-items: center;
+}
+
+.right-container {
+    background-color: #DFDFDE;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-container,
+.right-container {
+    display: flex;
+    width: 50%;
+    position: relative;
+}
+
+.title {
+    width: 350px;
+    padding-left:10px;
+    border-left:5px solid white;
+}
+
+.title h2 {
+    color: white;
+    font-weight: 900;
+    margin-bottom:5px;
+    font-size: 30px;
+}
+
+.inner-right-container {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #f7f5f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    padding: auto; 
+    width: 350px;
+}
+
+.form-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sign-in {
+    margin-bottom: 40px;
+    color: #F56D91;
+}
+
+.input-label {
+    height: 100px;
+}
+
+/* .forget {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 25px;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none; 
+}
+
+.forget a {
+    text-decoration: none;
+    color: rgb(122, 122, 216);
+} */
+
+.submit {
+    width: 100%;
+    height: 35px;
+    background-color:#F56D91;
+    border: 1px solid #F56D91;
+    margin-top: 25px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: 50px;
+}
+
+.required {
+    color: red;
+    font-size: 10px;
+    padding-left: 10px;
+    height: 15px;
+}
+
+.input-field {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    background: white;
+    border-radius: 50px;
+    border: 1px solid white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    height: 35px;
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    font-size: 14px;
+}
+
+.sign-up {
+    margin-top: 15px;
+}
+
+.label {
+    padding-left: 10px;
+    margin-bottom: 50px;
+}

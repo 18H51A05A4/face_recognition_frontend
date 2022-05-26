@@ -1,0 +1,139 @@
+<div class="parent">
+    <div class="first">
+        <p>Today's Classes</p>
+        <div class="tbl-links">
+            <table class="list">
+                <tbody>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Class</th>
+                        <th>Starts At</th>
+                        <th>Meeting Link</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>CSE - A</td>
+                        <td>09:10 AM</td>
+                        <td>
+                            <button>LINK</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>CSE - B</td>
+                        <td>10:10 AM</td>
+                        <td>
+                            <button>LINK</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>CSE - C</td>
+                        <td>11:10 AM</td>
+                        <td>
+                            <button>LINK</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="second">
+        <p>Attendance</p>
+        <div class="set-date">
+            <label for="select-date">Set Date : &nbsp; </label>
+            <input type="date" name="select date" id="select-date">
+        </div>
+
+        <div class="tbl-links">
+            <table class="list">
+                <tbody>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Class</th>
+                        <th>Class Timing</th>
+                        <th>Class Attendance</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>CSE - A</td>
+                        <td>09:10 AM</td>
+                        <td>
+                            <button class="get-attnd" (click)="getAttendance()">Get Attendance</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>CSE - B</td>
+                        <td>10:10 AM</td>
+                        <td>
+                            <button class="get-attnd">Get Attendance</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>CSE - C</td>
+                        <td>11:10 AM</td>
+                        <td>
+                            <button class="get-attnd">Get Attendance</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div modal-overlay="Get Attendance" *ngIf="showOverlay">
+        <div class="modal">
+            <div modal-header>
+                <div modal-title="title">Student wise Attendance</div>
+                <button icon="close">&times;</button>
+            </div>
+            <div modal-body>
+                <div class="tbl-links">
+                    <table class="list">
+                        <tbody>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Roll No.</th>
+                                <th>Duration Present (in minutes)</th>
+                                <th>Remarks</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>18H51A05A8</td>
+                                <td>38 min</td>
+                                <td> Present </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>18H51A05H9</td>
+                                <td>38 min</td>
+                                <td> Present </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>18H51A05G7</td>
+                                <td>20 min</td>
+                                <td> Absent </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>18H51A0576</td>
+                                <td>0 min</td>
+                                <td> Absent </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div modal-footer>
+                <div class="footer-content">
+                    <button cancel-modal="cancel" (click)="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
