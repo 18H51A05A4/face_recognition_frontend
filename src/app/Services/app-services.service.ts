@@ -31,4 +31,30 @@ export class AppServicesService {
   getUser(): Observable<any> {
     return this._http.get<any>(this._url + '/attendance/get-user-details');
   }
+
+  getAllStudents(): Observable<any[]> {
+    return this._http.get<any[]>(this._url + '/attendance/get-students');
+  }
+
+  getTodaysClasses(): Observable<any[]> {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    const date = yyyy + '-' + mm + '-' + dd;
+    return this._http.post<any[]>(this._url + '/attendance/get-classes-teacher', {date});
+  }
+
+  getSpecificClassStudentsAttendance(): Observable<any[]> {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    const date = yyyy + '-' + mm + '-' + dd;
+    return this._http.post<any[]>(this._url + '/attendance/get-attendance', {date});
+  }
+
+  getTodaysStudentClasses(): Observable<any[]> {
+    return this._http.get<any[]>(this._url + '/attendance/get-classes-student');
+  }
 }
