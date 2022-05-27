@@ -1,3 +1,4 @@
+import { AppServicesService } from './../../Services/app-services.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,24 +11,26 @@ export class LoginComponent implements OnInit {
 
   signInForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _appService: AppServicesService) { }
 
   ngOnInit(): void {
     this.signInForm = this.fb.group({
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", Validators.required]
+      email: [""],
+      password: [""]
     });
   }
 
   onSubmit(form: FormGroup) {      
     var user = {
-      email: form.value.email,
+      username: form.value.email,
       password: form.value.password
     }
-    // this.loginServ.postObject(user).subscribe(res => {
-    //   console.log(res.token);
-    //   console.log(res);
-    //   localStorage.setItem('AccessToken', res.token)
-    // });
+    this._appService.checkUser(user).subscribe(res => {
+      localStorage.setItem("Access_Token", res.access);
+      this._appService.getUser().subscribe(user => {
+        localStorage.setItem('user', JSON.stringify(user));
+        location.href = '/dashboard';
+      });
+    });
   }
 }

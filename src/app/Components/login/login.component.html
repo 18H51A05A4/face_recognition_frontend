@@ -15,16 +15,16 @@
                 <div class="input-label">
                     <label class="label" for="email">Email<span class="star">&nbsp;*</span> :</label>
                     <input type="text" class="input-field" formControlName="email" name="email" placeholder="Enter your email">
-                    <div class="required" *ngIf="signInForm.get('email')?.invalid && (signInForm.get('email')?.dirty || signInForm.get('email')?.touched)">
+                    <!-- <div class="required" *ngIf="signInForm.get('email')?.invalid && (signInForm.get('email')?.dirty || signInForm.get('email')?.touched)">
                         <p>*Please provide valid Email</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="input-label">
                     <label class="label" for="email">Password<span class="star">&nbsp;*</span> :</label>
                     <input type="password" class="input-field" formControlName="password" name="password" placeholder="Enter your Password">
-                    <div class="required" *ngIf="signInForm.get('password')?.invalid && (signInForm.get('password')?.dirty || signInForm.get('password')?.touched)">
+                    <!-- <div class="required" *ngIf="signInForm.get('password')?.invalid && (signInForm.get('password')?.dirty || signInForm.get('password')?.touched)">
                         <p>*Please enter password</p>
-                    </div>
+                    </div> -->
                 </div>
                 <button type="submit" class="submit">Login</button>
                 <div class="forget">

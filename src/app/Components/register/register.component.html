@@ -7,14 +7,14 @@
                     <div class="label-name">
                         Username<span class="asterisk">&nbsp;*</span>
                     </div>
-                    <input formControlName="FirstName" class="form-input" placeholder="Enter first name " name="firstName"
+                    <input formControlName="Username" class="form-input" placeholder="Enter first name " name="firstName"
                     [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'">
                 </label>
-                <div class="error-message">
+                <!-- <div class="error-message">
                     <p *ngIf="myForm.get('FirstName')?.invalid && (myForm.get('FirstName')?.dirty || myForm.get('FirstName')?.touched|| myForm.getError('invalidform'))">
-                        *Please enter first name
+                        *Please enter username
                     </p>
-                </div>
+                </div> -->
             </div>
             <div class="form-item">
                 <label class="form-control">
@@ -23,14 +23,14 @@
                     </div>
                     <input formControlName="EmailAddress" type="email" class="form-input" placeholder="Enter email address" name="emailAddress" [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'">
                 </label>
-                <div class="error-message">
+                <!-- <div class="error-message">
                     <p *ngIf="myForm.get('EmailAddress')?.errors?.['required'] && (myForm.get('EmailAddress')?.dirty || myForm.get('EmailAddress')?.touched || myForm.getError('invalidform'))" >
                         *Please enter email address
                     </p>
                     <p *ngIf="validEmail">
                         *Please enter a valid email
                     </p>
-                </div>
+                </div> -->
             </div>
             <div class="form-item">
                 <label class="form-control">
@@ -39,61 +39,22 @@
                     </div>
                     <input formControlName="Password" class="form-input" type="password" name="password" placeholder="Enter Password" [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'">
                 </label>
-                <div class="error-message">
+                <!-- <div class="error-message">
                     <p *ngIf="myForm.get('Password')?.invalid  && (myForm.get('Password')?.dirty || myForm.get('Password')?.touched|| myForm.getError('invalidform'))">
                         *Please enter Password
                     </p>
-                </div>
+                </div> -->
             </div>
             <div class="form-item">
                 <label class="form-control">
                     <div class="label-name">
-                        Confirm Password<span class="asterisk">&nbsp;*</span>
+                        Register as<span class="asterisk">&nbsp;*</span>
                     </div>
-                    <input #confirmpassword formControlName="ConfirmPassword" name="confirmPassword" class="form-input" type="password" placeholder="Re-enter Password" (keyup)="MatchPasswords(confirmpassword.value,myForm)" [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'">
+                    <select formControlName="Role">
+                        <option value="faculty">Faculty</option>
+                        <option value="student">Student</option>
+                    </select>
                 </label>
-                <div class="error-message">
-                    <p *ngIf="myForm.get('ConfirmPassword')?.errors?.['required']  && (myForm.get('ConfirmPassword')?.dirty || myForm.get('ConfirmPassword')?.touched|| myForm.getError('invalidform'))">
-                        *Please re-enter a Password
-                    </p>
-                    <p *ngIf="myForm.getError('wrongpassword') && !myForm.get('ConfirmPassword')?.errors?.['required'] ">
-                        *Password doesn't match
-                    </p>
-                </div>
-            </div>
-            <div class="form-item-gender">
-                <div class="label-name">
-                    Gender<span class="asterisk">&nbsp;*</span>
-                </div>
-                <div class="form-item-gender-options">
-                    <label class="radio-btn">
-                        <input type="radio" name="Gender" value="Male" formControlName="Gender" [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'">
-                        Male
-                    </label>
-                    <label class="radio-btn">
-                        <input type="radio" name="Gender" value="Female" formControlName="Gender" [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'" >
-                        Female
-                    </label>
-                    <label class="radio-btn">
-                        <input type="radio" name="Gender" value="Other" formControlName="Gender" [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'">
-                        Other
-                    </label>
-                    <div class="error-message">
-                        <p *ngIf="myForm.get('Gender')?.invalid  && (myForm.get('Gender')?.dirty || myForm.get('Gender')?.touched|| myForm.getError('invalidform'))">*Please select gender</p>  
-                    </div>
-                </div>
-            </div>
-            <div class="form-item">
-                <label class="form-control">
-                    <div class="label-name">
-                        DOB<span class="asterisk">&nbsp;*</span>
-                    </div>
-                    <input #dateOfBirth formControlName="DOB" type="date" class="form-input" name="dateOfBirth" [ngClass]="myForm.getError('invalidform')?'form-invalid':'form-valid'" (change)="ageValidation(dateOfBirth.value)" >
-                </label>
-                <div class="error-message">
-                    <p *ngIf="myForm.get('DOB')?.errors?.['required']   && (myForm.get('DOB')?.dirty || myForm.get('DOB')?.touched|| myForm.getError('invalidform'))">*Please provide your date of birth</p>
-                    <p *ngIf="myForm.get('DOB')?.errors?.['invalidAge']">*Please enter valid date of birth</p>
-                </div>
             </div>
             <div class="form-item">
                 <label class="form-control">
@@ -101,17 +62,17 @@
                         Photo<span class="asterisk">&nbsp;*</span>
                     </div>
                     <div class="photo-btns">
-                        <button type="button" class="take-photo-btn">Take Photo</button>
-                        <button type="button" class="take-photo-btn">Submit Photo</button>
+                        <button type="button" class="take-photo-btn"><a href="http://localhost:3000/" target="_blank">Take Photo</a></button>
+                        <!-- <button type="button" class="take-photo-btn">Submit Photo</button> -->
                     </div>
                 </label>
-            </div>  
+            </div>
             <button type="submit" class="signup-btn">Register</button>
-            <div class="form-item">
+            <!-- <div class="form-item">
                 <div class="error-message">
                     <p *ngIf="myForm.getError('invalidform')">*Please enter all the required fields</p>
                 </div>
-            </div>
+            </div> -->
         </form>
     </div>
 </div>

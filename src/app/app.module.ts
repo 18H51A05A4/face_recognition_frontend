@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
 import { StudentProfileCardComponent } from './PartialComponents/student-profile-card/student-profile-card.component';
 import { FacultyProfileCardComponent } from './PartialComponents/faculty-profile-card/faculty-profile-card.component';
 import { FacultyDashboardComponent } from './Components/faculty-dashboard/faculty-dashboard.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SetTokenInterceptor } from './Interceptors/set-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,16 @@ import { FacultyDashboardComponent } from './Components/faculty-dashboard/facult
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SetTokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
