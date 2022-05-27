@@ -1,87 +1,3 @@
-<!-- <div class="container">
-    <div class="profile-container">
-        <div class="profile">
-
-        </div>
-        <div class="attendance">
-            <div class="attendance-stats">
-                <div class="weekly-attendance">
-                    <p>Weekly Attendance</p>
-                    <div id="weekly-chart"></div>
-                </div>
-                <div class="today-attendance">
-                    <p>Today's Attendance</p>
-                    <div class="today-stats">
-                        <table class="attendance-list">
-                            <tr>
-                                <th>NLP</th> 
-                                <td>Attended</td> 
-                            </tr>
-                            <tr>
-                                <th>MM</th>  
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <th>BDA</th>  
-                                <td>N/A</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="links-container">
-        <div class="links">
-            <table class="links-table">
-                <tbody>
-                    <tr>
-                        <th>S.No</th>
-                        <th>Subject</th>
-                        <th>Starts At</th>
-                        <th>Take Snap</th>
-                        <th>Meeting Link</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>NLP</td>
-                        <td>10:00 AM</td>
-                        <td>
-                            <button>Give Attendance</button>
-                        </td>
-                        <td>
-                            <button>LINK</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>NLP</td>
-                        <td>10:00 AM</td>
-                        <td>
-                            <button>Give Attendance</button>
-                        </td>
-                        <td>
-                            <button>LINK</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>NLP</td>
-                        <td>10:00 AM</td>
-                        <td>
-                            <button>Give Attendance</button>
-                        </td>
-                        <td>
-                            <button>LINK</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div> -->
-
-
 <div class="parent">
     <div class="first">
         <div class="profile">
@@ -123,21 +39,27 @@
                         <th>S.No</th>
                         <th>Subject</th>
                         <th>Starts At</th>
-                        <th>Take Snap</th>
+                        <th>Ends At</th>
+                        <th>Joining Attendance</th>
+                        <th>Leaving Attendance</th>
                         <th>Meeting Link</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>NLP</td>
-                        <td>10:00 AM</td>
+                    <tr *ngFor="let class of classes;let index">
+                        <td>{{ index + 1 }}</td>
+                        <td>{{ class.class_name }}</td>
+                        <td>{{ class.start_time }}</td>
+                        <td>{{ class.end_time }}</td>
                         <td>
-                            <button>Give Attendance</button>
+                            <button><a href="http://localhost:3000?is_registration=false&username={{user.username}}&user_id={{user.user_id}}&{{class.class_id}}&is_joining=true" target="_blank"></a> Joining Attendance</button>
                         </td>
                         <td>
-                            <button>LINK</button>
+                            <button><a href="http://localhost:3000?is_registration=false&username={{user.username}}&user_id={{user.user_id}}&{{class.class_id}}&is_joining=false" target="_blank"></a> Leaving Attendance</button>
+                        </td>
+                        <td>
+                            <button><a #meetLink class="meet-link" [href]="class.meeting_link" target="_blank">LINK</a></button>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>2</td>
                         <td>NLP</td>
                         <td>10:00 AM</td>
@@ -158,7 +80,7 @@
                         <td>
                             <button>LINK</button>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

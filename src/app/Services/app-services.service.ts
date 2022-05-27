@@ -8,7 +8,7 @@ import { UserModel } from '../Models/user-model';
 })
 export class AppServicesService {
 
-  private _url: string = 'https://5663-2401-4900-4824-9f2d-da3-2333-c885-bd2e.in.ngrok.io';
+  private _url: string = 'https://1f7a-115-98-82-154.in.ngrok.io';
 
   constructor(private _http: HttpClient) { }
 
