@@ -2,11 +2,11 @@
     <nav class="navbar">
         <a href="/" class ="logo"><i class="fa-solid fa-calendar-days"></i> Attendance Tracker</a>
         <ul class="navbar-options">
-            <ng-container *ngIf="isUserLoggedIn">
+            <ng-container *ngIf="!isUserLoggedIn">
                 <li><a routerLink="login">Login</a></li>
                 <li><a routerLink="signup">Signup</a></li>
             </ng-container>
-            <!-- <ng-container *ngIf="!isUserLoggedIn"> -->
+            <ng-container *ngIf="isUserLoggedIn">
                 <li>
                     <div class="profile">
                         <div class="icon-wrap" (click)="showOptionsList()">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </li>
-            <!-- </ng-container> -->
+            </ng-container>
         </ul>
     </nav>
 </header>

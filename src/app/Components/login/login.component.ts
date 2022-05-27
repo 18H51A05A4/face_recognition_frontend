@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     }
     this._appService.checkUser(user).subscribe(res => {
       localStorage.setItem("Access_Token", res.access);
+      // location.href = '/dashboard';
       this._appService.getUser().subscribe(user => {
         localStorage.setItem('user', JSON.stringify(user));
         location.href = '/dashboard';
