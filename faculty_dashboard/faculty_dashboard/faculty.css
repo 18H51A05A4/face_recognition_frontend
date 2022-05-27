@@ -116,4 +116,11 @@ th,td,tr{
 [modal-body] > .tbl-links{
   padding: 10px;
 }
+
+.student-list{
+margin: 50px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
  

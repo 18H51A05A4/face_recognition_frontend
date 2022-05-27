@@ -1,4 +1,34 @@
 <div class="parent">
+    <div >
+        <form class="student-list" [formGroup]="myForm" >
+           <label >
+              Class Name:
+              <input type="text" formControlName="className">
+           </label>
+           <label >
+               Starts at:
+               <input type="time" formControlName="startTime">
+           </label>
+           <label >
+               Ends at:
+               <input type="time" formControlName="endTime">
+           </label>
+           <label >
+               Date:
+               <input type="date" formControlName="date">
+           </label>
+           <div id="label">
+               students:
+               <div #list1 id="list1" class="dropdown-check-list" tabindex="100" (click)="displayStudents()">
+                <span class="anchor">students</span>
+                <ul #items class="items" >    
+                <li *ngFor="let student of students"><input #studentList type="checkbox" value={{student.id}} />{{student.studentName}} </li>
+                </ul>
+                </div>
+            </div>
+            <button (click)="onSubmit()">Create</button>
+        </form>
+       </div>
     <div class="first">
         <p>Today's Classes</p>
         <div class="tbl-links">
