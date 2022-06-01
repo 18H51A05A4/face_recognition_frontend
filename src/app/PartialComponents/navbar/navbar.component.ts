@@ -9,12 +9,13 @@ export class NavbarComponent implements OnInit {
 
   isUserLoggedIn: boolean = false;
   showOptions: boolean = false;
-  // user: any = JSON.parse(localStorage.getItem('user' || '{}'));
+  user: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('user')!=null) {
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    if(this.user!=null) {
       this.isUserLoggedIn = true;
     }
   }

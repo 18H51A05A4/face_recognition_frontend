@@ -8,7 +8,7 @@ import { UserModel } from '../Models/user-model';
 })
 export class AppServicesService {
 
-  private _url: string = 'https://1f7a-115-98-82-154.in.ngrok.io';
+  private _url: string = 'http://localhost:8000';
 
   constructor(private _http: HttpClient) { }
 

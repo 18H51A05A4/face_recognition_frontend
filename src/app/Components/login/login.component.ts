@@ -30,7 +30,10 @@ export class LoginComponent implements OnInit {
       // location.href = '/dashboard';
       this._appService.getUser().subscribe(user => {
         localStorage.setItem('user', JSON.stringify(user));
-        location.href = '/dashboard';
+        if(user.is_teacher)
+          location.href = '/faculty-dashboard';
+        else
+          location.href = '/dashboard';
       });
     });
   }

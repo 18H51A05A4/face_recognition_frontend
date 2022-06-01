@@ -20,6 +20,8 @@ export class FacultyDashboardComponent implements OnInit {
   form: any[] = [];
   chckedList: any[] = [];
   classes: any[] = [];
+  specificClass: any;
+  studentsAttendance: any[];
 
   constructor(private fb: FormBuilder, private _appService: AppServicesService) { }
 
@@ -30,11 +32,14 @@ export class FacultyDashboardComponent implements OnInit {
 
     this._appService.getTodaysClasses().subscribe(classes => {
       this.classes = classes;
-      console.log(classes);
+      // console.log(classes);
     });
 
     this._appService.getSpecificClassStudentsAttendance().subscribe(attendance => {
-      console.log(attendance);
+      // console.log(attendance);
+      this.specificClass = attendance[0][0];
+      // console.log(this.specificClass);
+      this.studentsAttendance = attendance[0].shift();
     })
 
     this.myForm = this.fb.group({

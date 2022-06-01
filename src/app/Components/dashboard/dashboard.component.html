@@ -5,26 +5,30 @@
         </div>
         <div class="attendance">
             <div class="stats">
-                <div class="weekly">
+                <!-- <div class="weekly">
                     <p>Weekly Attendance</p>
                     <div id="weekly-chart"></div>
-                </div>
+                </div> -->
                 <div class="today">
                     <p>Today's Attendance</p>
                     <div class="today-stat">
                         <table class="list">
                             <tr>
-                                <th>NLP</th>
+                                <th>Subject</th>
                                 <td>Attended</td>
                             </tr>
-                            <tr>
-                                <th>MM</th>
-                                <td>N/A</td>
+                            <tr *ngFor="let myAtt of myAttendance">
+                                <th>{{myAtt.class_name}}</th>
+                                <td>{{myAtt.is_attended}}</td>
+                            </tr>
+                            <!-- <tr>
+                                <th>{{myAtt}}</th>
+                                <td>{{myAtt}}</td>
                             </tr>
                             <tr>
-                                <th>BDA</th>
-                                <td>N/A</td>
-                            </tr>
+                                <th>{{myAtt}}</th>
+                                <td>{{myAtt}}</td>
+                            </tr> -->
                         </table>
                     </div>
                 </div>
@@ -36,7 +40,7 @@
             <table class="list">
                 <tbody>
                     <tr>
-                        <th>S.No</th>
+                        <!-- <th>S.No</th> -->
                         <th>Subject</th>
                         <th>Starts At</th>
                         <th>Ends At</th>
@@ -44,16 +48,16 @@
                         <th>Leaving Attendance</th>
                         <th>Meeting Link</th>
                     </tr>
-                    <tr *ngFor="let class of classes;let index">
-                        <td>{{ index + 1 }}</td>
+                    <tr *ngFor="let class of classes">
+                        <!-- <td> index + 1</td> -->
                         <td>{{ class.class_name }}</td>
                         <td>{{ class.start_time }}</td>
                         <td>{{ class.end_time }}</td>
                         <td>
-                            <button><a href="http://localhost:3000?is_registration=false&username={{user.username}}&user_id={{user.user_id}}&{{class.class_id}}&is_joining=true" target="_blank"></a> Joining Attendance</button>
+                            <button><a href="http://localhost:3000?is_registration=false&username={{user.username}}&user_id={{user.user_id}}&class_id={{class.class_id}}&is_joining=true" target="_blank">Joining Attendance</a></button>
                         </td>
                         <td>
-                            <button><a href="http://localhost:3000?is_registration=false&username={{user.username}}&user_id={{user.user_id}}&{{class.class_id}}&is_joining=false" target="_blank"></a> Leaving Attendance</button>
+                            <button><a href="http://localhost:3000?is_registration=false&username={{user.username}}&user_id={{user.user_id}}&class_id={{class.class_id}}&is_joining=false" target="_blank">Leaving Attendance</a></button>
                         </td>
                         <td>
                             <button><a #meetLink class="meet-link" [href]="class.meeting_link" target="_blank">LINK</a></button>

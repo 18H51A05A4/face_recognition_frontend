@@ -42,20 +42,20 @@
             <table class="list">
                 <tbody>
                     <tr>
-                        <th>S.No</th>
                         <th>Class</th>
                         <th>Starts At</th>
+                        <th>Ends At</th>
                         <th>Meeting Link</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>CSE - A</td>
-                        <td>09:10 AM</td>
+                    <tr *ngFor="let class of classes">
+                        <td>{{class.class_name}}</td>
+                        <td>{{class.start_time}}</td>
+                        <td>{{class.end_time}}</td>
                         <td>
-                            <button>LINK</button>
+                            <button><a href={{class.meeting_link}}>LINK</a></button>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>2</td>
                         <td>CSE - B</td>
                         <td>10:10 AM</td>
@@ -70,7 +70,7 @@
                         <td>
                             <button>LINK</button>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -82,32 +82,29 @@
             <input type="date" name="select date" id="select-date">
         </div>
 
-        <div class="tbl-links">
+        <!-- <div class="tbl-links">
             <table class="list">
                 <tbody>
                     <tr>
-                        <th>S.No</th>
                         <th>Class</th>
                         <th>Class Timing</th>
                         <th>Class Attendance</th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td>CSE - A</td>
-                        <td>09:10 AM</td>
+                        <td>{{specificClass.class_name}}</td>
+                        <td>{{specificClass.start_time}}</td>
                         <td>
                             <button class="get-attnd" (click)="getAttendance()">Get Attendance</button>
                         </td>
                     </tr>
                     <tr>
-                        <td>2</td>
                         <td>CSE - B</td>
                         <td>10:10 AM</td>
                         <td>
                             <button class="get-attnd">Get Attendance</button>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td>3</td>
                         <td>CSE - C</td>
                         <td>11:10 AM</td>
@@ -131,18 +128,16 @@
                     <table class="list">
                         <tbody>
                             <tr>
-                                <th>S.No</th>
                                 <th>Roll No.</th>
                                 <th>Duration Present (in minutes)</th>
                                 <th>Remarks</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>18H51A05A8</td>
+                            <tr *ngFor="let student of studentsAttendance">
+                                <td>{{student.user_name}}</td>
                                 <td>38 min</td>
                                 <td> Present </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>2</td>
                                 <td>18H51A05H9</td>
                                 <td>38 min</td>
@@ -172,4 +167,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
